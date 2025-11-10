@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
+import passwordRoutes from "./routes/passwordRoutes.js"
 
 dotenv.config();
 
@@ -16,6 +17,8 @@ mongoose
     .catch((err) => console.log(err));
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/auth", passwordRoutes);
 
 app.get("/", (req, res) => {
     res.send("FinTrack API is running...");
