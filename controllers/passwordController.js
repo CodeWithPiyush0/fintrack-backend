@@ -79,9 +79,6 @@ export const resetPassword = async (req, res) => {
     const { token } = req.params;
     const { password } = req.body;
 
-    console.log("received token:", token ? "present" : "missing");
-    console.log("received password:", password ? "present" : "missing")
-
     try {
         if(!token){
             return res.status(400).json({ message: "Token missing" });

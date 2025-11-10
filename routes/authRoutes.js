@@ -17,4 +17,12 @@ router.get("/profile", protect, (req, res) => {
     });
 });
 
+// GET /api/auth/verify - used by frontend to validate stored token
+router.get("/verify", protect, (req, res) => {
+    res.status(200).json({
+        valid: true,
+        user: req.user,
+    });
+});
+
 export default router;
